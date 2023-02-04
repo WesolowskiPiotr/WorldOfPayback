@@ -9,14 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-   
-    
     var body: some View {
-        VStack {
-            Text("URL: \(APIConstants.host)")
-            Text(NSLocalizedString("test_text.label", comment: ""))
-        }
-        .padding()
+//        VStack {
+//            Text("URL: \(APIConstants.host)")
+//            Text(NSLocalizedString("test_text.label", comment: ""))
+//        }
+//        .padding()
+        TransactionsListView(viewModel: TransactionsListViewModel(transactionsFetcher: TransactionsFetcherMock()))
     }
 }
 

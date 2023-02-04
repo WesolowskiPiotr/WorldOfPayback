@@ -56,6 +56,20 @@
 		78F6C5F0298EB94D008653A7 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C5EF298EB94D008653A7 /* Value.swift */; };
 		78F6C5F2298EC051008653A7 /* TransactionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C5F1298EC051008653A7 /* TransactionsContainer.swift */; };
 		78F6C5F4298EC278008653A7 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C5F3298EC278008653A7 /* Alias.swift */; };
+		78F6C5FA298EC8C5008653A7 /* FetchTransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C5F9298EC8C5008653A7 /* FetchTransactionsService.swift */; };
+		78F6C5FB298EC8C5008653A7 /* FetchTransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C5F9298EC8C5008653A7 /* FetchTransactionsService.swift */; };
+		78F6C5FD298ECA49008653A7 /* TransactionsFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C5FC298ECA49008653A7 /* TransactionsFetcherMock.swift */; };
+		78F6C5FE298ECA49008653A7 /* TransactionsFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C5FC298ECA49008653A7 /* TransactionsFetcherMock.swift */; };
+		78F6C600298ECAAA008653A7 /* TransactionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C5FF298ECAAA008653A7 /* TransactionMock.swift */; };
+		78F6C601298ECAAA008653A7 /* TransactionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C5FF298ECAAA008653A7 /* TransactionMock.swift */; };
+		78F6C604298ECB62008653A7 /* TransactionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C603298ECB62008653A7 /* TransactionsListViewModel.swift */; };
+		78F6C605298ECB62008653A7 /* TransactionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C603298ECB62008653A7 /* TransactionsListViewModel.swift */; };
+		78F6C608298ECB77008653A7 /* TransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C607298ECB77008653A7 /* TransactionsListView.swift */; };
+		78F6C609298ECB77008653A7 /* TransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C607298ECB77008653A7 /* TransactionsListView.swift */; };
+		78F6C60B298ECB87008653A7 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C60A298ECB87008653A7 /* TransactionRow.swift */; };
+		78F6C60C298ECB87008653A7 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C60A298ECB87008653A7 /* TransactionRow.swift */; };
+		78F6C60E298EDE4D008653A7 /* IdentifiableTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C60D298EDE4D008653A7 /* IdentifiableTransaction.swift */; };
+		78F6C60F298EDE4D008653A7 /* IdentifiableTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C60D298EDE4D008653A7 /* IdentifiableTransaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +126,13 @@
 		78F6C5EF298EB94D008653A7 /* Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
 		78F6C5F1298EC051008653A7 /* TransactionsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsContainer.swift; sourceTree = "<group>"; };
 		78F6C5F3298EC278008653A7 /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
+		78F6C5F9298EC8C5008653A7 /* FetchTransactionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTransactionsService.swift; sourceTree = "<group>"; };
+		78F6C5FC298ECA49008653A7 /* TransactionsFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFetcherMock.swift; sourceTree = "<group>"; };
+		78F6C5FF298ECAAA008653A7 /* TransactionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionMock.swift; sourceTree = "<group>"; };
+		78F6C603298ECB62008653A7 /* TransactionsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListViewModel.swift; sourceTree = "<group>"; };
+		78F6C607298ECB77008653A7 /* TransactionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListView.swift; sourceTree = "<group>"; };
+		78F6C60A298ECB87008653A7 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
+		78F6C60D298EDE4D008653A7 /* IdentifiableTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableTransaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,12 +191,13 @@
 		78F6C564298E9396008653A7 /* WorldOfPayback */ = {
 			isa = PBXGroup;
 			children = (
-				78F6C5A6298EA926008653A7 /* Core */,
-				78F6C565298E9396008653A7 /* WorldOfPaybackApp.swift */,
-				78F6C567298E9396008653A7 /* ContentView.swift */,
 				78F6C569298E9398008653A7 /* Assets.xcassets */,
-				78F6C56B298E9398008653A7 /* Preview Content */,
+				78F6C567298E9396008653A7 /* ContentView.swift */,
+				78F6C5A6298EA926008653A7 /* Core */,
+				78F6C5F7298EC7F5008653A7 /* TransactionList */,
 				78F6C5A1298EA321008653A7 /* Localizable.strings */,
+				78F6C56B298E9398008653A7 /* Preview Content */,
+				78F6C565298E9396008653A7 /* WorldOfPaybackApp.swift */,
 			);
 			path = WorldOfPayback;
 			sourceTree = "<group>";
@@ -220,8 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				78F6C5A8298EA953008653A7 /* api */,
-				78F6C5DB298EAEBA008653A7 /* helper */,
-				78F6C5DA298EAEB4008653A7 /* mock */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -335,6 +355,8 @@
 		78F6C5D9298EAEA9008653A7 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				78F6C5DB298EAEBA008653A7 /* helper */,
+				78F6C5DA298EAEB4008653A7 /* mock */,
 				78F6C5DC298EAED6008653A7 /* RequestManagerTests.swift */,
 				78F6C5DE298EAF40008653A7 /* AccessTokenManagerTests.swift */,
 			);
@@ -378,13 +400,51 @@
 		78F6C5EA298EB80C008653A7 /* transaction */ = {
 			isa = PBXGroup;
 			children = (
+				78F6C5F3298EC278008653A7 /* Alias.swift */,
 				78F6C5EB298EB830008653A7 /* Transaction.swift */,
 				78F6C5ED298EB8FC008653A7 /* TransactionDetail.swift */,
 				78F6C5F1298EC051008653A7 /* TransactionsContainer.swift */,
 				78F6C5EF298EB94D008653A7 /* Value.swift */,
-				78F6C5F3298EC278008653A7 /* Alias.swift */,
+				78F6C5FF298ECAAA008653A7 /* TransactionMock.swift */,
+				78F6C60D298EDE4D008653A7 /* IdentifiableTransaction.swift */,
 			);
 			path = transaction;
+			sourceTree = "<group>";
+		};
+		78F6C5F7298EC7F5008653A7 /* TransactionList */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C5F8298EC80E008653A7 /* services */,
+				78F6C602298ECB37008653A7 /* viewModels */,
+				78F6C606298ECB67008653A7 /* views */,
+			);
+			path = TransactionList;
+			sourceTree = "<group>";
+		};
+		78F6C5F8298EC80E008653A7 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C5F9298EC8C5008653A7 /* FetchTransactionsService.swift */,
+				78F6C5FC298ECA49008653A7 /* TransactionsFetcherMock.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		78F6C602298ECB37008653A7 /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C603298ECB62008653A7 /* TransactionsListViewModel.swift */,
+			);
+			path = viewModels;
+			sourceTree = "<group>";
+		};
+		78F6C606298ECB67008653A7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				78F6C60A298ECB87008653A7 /* TransactionRow.swift */,
+				78F6C607298ECB77008653A7 /* TransactionsListView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -558,17 +618,24 @@
 				78F6C5F0298EB94D008653A7 /* Value.swift in Sources */,
 				78F6C5B6298EAADA008653A7 /* DataParser.swift in Sources */,
 				78F6C566298E9396008653A7 /* WorldOfPaybackApp.swift in Sources */,
+				78F6C600298ECAAA008653A7 /* TransactionMock.swift in Sources */,
 				78F6C5B9298EAB0D008653A7 /* RequestManager.swift in Sources */,
+				78F6C5FA298EC8C5008653A7 /* FetchTransactionsService.swift in Sources */,
 				78F6C5F4298EC278008653A7 /* Alias.swift in Sources */,
 				78F6C5B3298EAAC4008653A7 /* TransactionsRequest.swift in Sources */,
+				78F6C608298ECB77008653A7 /* TransactionsListView.swift in Sources */,
 				78F6C5D0298EAD0C008653A7 /* AccessTokenManager.swift in Sources */,
+				78F6C60B298ECB87008653A7 /* TransactionRow.swift in Sources */,
+				78F6C5FD298ECA49008653A7 /* TransactionsFetcherMock.swift in Sources */,
 				78F6C5D4298EAD53008653A7 /* AppUserDefaultsKeys.swift in Sources */,
+				78F6C60E298EDE4D008653A7 /* IdentifiableTransaction.swift in Sources */,
 				78F6C5EE298EB8FC008653A7 /* TransactionDetail.swift in Sources */,
 				78F6C5AF298EA9F7008653A7 /* APIConstants.swift in Sources */,
 				78F6C5F2298EC051008653A7 /* TransactionsContainer.swift in Sources */,
 				78F6C5BC298EAB48008653A7 /* APIManager.swift in Sources */,
 				78F6C5C5298EAC30008653A7 /* RequestType.swift in Sources */,
 				78F6C5EC298EB830008653A7 /* Transaction.swift in Sources */,
+				78F6C604298ECB62008653A7 /* TransactionsListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,15 +670,22 @@
 				78F6C591298E9411008653A7 /* ContentView.swift in Sources */,
 				78F6C5C0298EABCD008653A7 /* NetworkError.swift in Sources */,
 				78F6C5CD298EACCC008653A7 /* APIToken.swift in Sources */,
+				78F6C60C298ECB87008653A7 /* TransactionRow.swift in Sources */,
+				78F6C605298ECB62008653A7 /* TransactionsListViewModel.swift in Sources */,
 				78F6C5B7298EAADA008653A7 /* DataParser.swift in Sources */,
 				78F6C592298E9411008653A7 /* WorldOfPaybackApp.swift in Sources */,
+				78F6C609298ECB77008653A7 /* TransactionsListView.swift in Sources */,
 				78F6C5BA298EAB0D008653A7 /* RequestManager.swift in Sources */,
 				78F6C5B4298EAAC4008653A7 /* TransactionsRequest.swift in Sources */,
+				78F6C601298ECAAA008653A7 /* TransactionMock.swift in Sources */,
 				78F6C5D1298EAD0C008653A7 /* AccessTokenManager.swift in Sources */,
 				78F6C5D5298EAD53008653A7 /* AppUserDefaultsKeys.swift in Sources */,
 				78F6C5B0298EA9F7008653A7 /* APIConstants.swift in Sources */,
+				78F6C5FE298ECA49008653A7 /* TransactionsFetcherMock.swift in Sources */,
 				78F6C5BD298EAB48008653A7 /* APIManager.swift in Sources */,
 				78F6C5C6298EAC30008653A7 /* RequestType.swift in Sources */,
+				78F6C60F298EDE4D008653A7 /* IdentifiableTransaction.swift in Sources */,
+				78F6C5FB298EC8C5008653A7 /* FetchTransactionsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
