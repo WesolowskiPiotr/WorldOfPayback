@@ -18,6 +18,8 @@
 		78F6C592298E9411008653A7 /* WorldOfPaybackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C565298E9396008653A7 /* WorldOfPaybackApp.swift */; };
 		78F6C595298E9411008653A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F6C56C298E9398008653A7 /* Preview Assets.xcassets */; };
 		78F6C596298E9411008653A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F6C569298E9398008653A7 /* Assets.xcassets */; };
+		78F6C59E298EA321008653A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78F6C5A1298EA321008653A7 /* Localizable.strings */; };
+		78F6C59F298EA321008653A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78F6C5A1298EA321008653A7 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		78F6C580298E9398008653A7 /* WorldOfPaybackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPaybackUITests.swift; sourceTree = "<group>"; };
 		78F6C582298E9398008653A7 /* WorldOfPaybackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPaybackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		78F6C59A298E9411008653A7 /* WorldOfPaybackTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPaybackTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78F6C5A0298EA321008653A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78F6C5A2298EA327008653A7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				78F6C567298E9396008653A7 /* ContentView.swift */,
 				78F6C569298E9398008653A7 /* Assets.xcassets */,
 				78F6C56B298E9398008653A7 /* Preview Content */,
+				78F6C5A1298EA321008653A7 /* Localizable.strings */,
 			);
 			path = WorldOfPayback;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 				Base,
 			);
 			mainGroup = 78F6C559298E9396008653A7;
@@ -263,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78F6C56D298E9398008653A7 /* Preview Assets.xcassets in Resources */,
+				78F6C59E298EA321008653A7 /* Localizable.strings in Resources */,
 				78F6C56A298E9398008653A7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78F6C595298E9411008653A7 /* Preview Assets.xcassets in Resources */,
+				78F6C59F298EA321008653A7 /* Localizable.strings in Resources */,
 				78F6C596298E9411008653A7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +350,18 @@
 			targetProxy = 78F6C57D298E9398008653A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		78F6C5A1298EA321008653A7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78F6C5A0298EA321008653A7 /* en */,
+				78F6C5A2298EA327008653A7 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		78F6C584298E9398008653A7 /* Debug */ = {
@@ -469,6 +489,8 @@
 				DEVELOPMENT_TEAM = 87Y27Y4V6M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WorldOfPayback;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -499,6 +521,8 @@
 				DEVELOPMENT_TEAM = 87Y27Y4V6M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WorldOfPayback;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -604,6 +628,7 @@
 				DEVELOPMENT_TEAM = 87Y27Y4V6M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "WPB Test";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -634,6 +659,7 @@
 				DEVELOPMENT_TEAM = 87Y27Y4V6M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "WPB Test";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
