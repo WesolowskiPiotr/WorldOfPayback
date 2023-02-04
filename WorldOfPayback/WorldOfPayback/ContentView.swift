@@ -9,15 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-    #if PRODUCTION
-    let APIUrl = "https://api.payback.com/transactions"
-    #else
-    let APIUrl = "https://api-test.payback.com/transactions"
-    #endif
+   
     
     var body: some View {
         VStack {
-            Text("URL: \(APIUrl)")
+            Text("URL: \(APIConstants.host)")
             Text(NSLocalizedString("test_text.label", comment: ""))
         }
         .padding()
