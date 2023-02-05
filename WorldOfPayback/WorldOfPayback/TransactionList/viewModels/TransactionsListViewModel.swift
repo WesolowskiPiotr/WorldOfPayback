@@ -26,6 +26,7 @@ final class TransactionsListViewModel: ObservableObject {
     }
     
     func fetchTransactions() async {
+        transactions.removeAll()
         isLoading = true
         transactions = await transactionsFetcher.fetchTransactions().map { transaction in
             return IdentifiableTransaction(transaction: transaction)

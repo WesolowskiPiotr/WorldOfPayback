@@ -6,5 +6,18 @@
   
 */
 
-// GENERAL
-"test_text.label" = "English";
+// Transaction List View
+"Transaction-List-Title" = "Transactions";
+"Fetching-Transactions-Text" = "Fetching transactions...";
+
+// Internet Connection View
+"Not-Connected-Text" = "Not connected!";
+"Perform-Network-Request" = "Perform Network Request";
+
+"Is-Connected-Alert-Title" = "Success!";
+"Is-Connected-Alert-Message" = "The network request can be performed";
+"Is-Connected-Alert-Button-Text" = "OK";
+
+"Not-Connected-Alert-Title" = "No Internet Connection";
+"Not-Connected-Alert-Message" = "Please enable Wifi or Cellular data";
+"Not-Connected-Alert-Button-Text" = "Cancel";

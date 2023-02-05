@@ -6,5 +6,19 @@
   
 */
 
-// GENERAL
-"test_text.label" = "German";
+// Transaction List View
+"Transaction-List-Title" = "Transaktionen";
+"Fetching-Transactions-Text" = "Transaktionen werden abgerufen...";
+
+// Internet Connection View
+"Not-Connected-Text" = "Nicht verbunden!";
+"Perform-Network-Request" = "Führen Sie eine Netzwerkanforderung durch";
+
+"Is-Connected-Alert-Title" = "Erfolg!";
+"Is-Connected-Alert-Message" = "Die Netzwerkanfrage kann durchgeführt werden";
+"Is-Connected-Alert-Button-Text" = "OK";
+
+"Not-Connected-Alert-Title" = "Keine Internetverbindung";
+"Not-Connected-Alert-Message" = "Bitte aktivieren Sie WLAN oder Mobilfunkdaten";
+"Not-Connected-Alert-Button-Text" = "Stornieren";
+

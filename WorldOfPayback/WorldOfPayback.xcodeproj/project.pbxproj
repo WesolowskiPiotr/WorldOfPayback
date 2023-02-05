@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78DF704E298F93290053AB59 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF704D298F93290053AB59 /* NetworkMonitor.swift */; };
+		78DF704F298F93290053AB59 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF704D298F93290053AB59 /* NetworkMonitor.swift */; };
+		78DF7051298F9BC80053AB59 /* InternetConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF7050298F9BC80053AB59 /* InternetConnectionView.swift */; };
+		78DF7052298F9BC80053AB59 /* InternetConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF7050298F9BC80053AB59 /* InternetConnectionView.swift */; };
 		78F6C566298E9396008653A7 /* WorldOfPaybackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C565298E9396008653A7 /* WorldOfPaybackApp.swift */; };
 		78F6C568298E9396008653A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6C567298E9396008653A7 /* ContentView.swift */; };
 		78F6C56A298E9398008653A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F6C569298E9398008653A7 /* Assets.xcassets */; };
@@ -90,6 +94,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78DF704D298F93290053AB59 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		78DF7050298F9BC80053AB59 /* InternetConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionView.swift; sourceTree = "<group>"; };
 		78F6C562298E9396008653A7 /* WorldOfPayback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPayback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F6C565298E9396008653A7 /* WorldOfPaybackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPaybackApp.swift; sourceTree = "<group>"; };
 		78F6C567298E9396008653A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -324,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				78F6C5D3298EAD53008653A7 /* AppUserDefaultsKeys.swift */,
+				78DF704D298F93290053AB59 /* NetworkMonitor.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -443,6 +450,7 @@
 			children = (
 				78F6C60A298ECB87008653A7 /* TransactionRow.swift */,
 				78F6C607298ECB77008653A7 /* TransactionsListView.swift */,
+				78DF7050298F9BC80053AB59 /* InternetConnectionView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -617,6 +625,8 @@
 				78F6C5CC298EACCC008653A7 /* APIToken.swift in Sources */,
 				78F6C5F0298EB94D008653A7 /* Value.swift in Sources */,
 				78F6C5B6298EAADA008653A7 /* DataParser.swift in Sources */,
+				78DF7051298F9BC80053AB59 /* InternetConnectionView.swift in Sources */,
+				78DF704E298F93290053AB59 /* NetworkMonitor.swift in Sources */,
 				78F6C566298E9396008653A7 /* WorldOfPaybackApp.swift in Sources */,
 				78F6C600298ECAAA008653A7 /* TransactionMock.swift in Sources */,
 				78F6C5B9298EAB0D008653A7 /* RequestManager.swift in Sources */,
@@ -667,6 +677,7 @@
 			files = (
 				78F6C5CA298EAC5C008653A7 /* AuthTokenRequest.swift in Sources */,
 				78F6C5C3298EAC0E008653A7 /* RequestProtocol.swift in Sources */,
+				78DF7052298F9BC80053AB59 /* InternetConnectionView.swift in Sources */,
 				78F6C591298E9411008653A7 /* ContentView.swift in Sources */,
 				78F6C5C0298EABCD008653A7 /* NetworkError.swift in Sources */,
 				78F6C5CD298EACCC008653A7 /* APIToken.swift in Sources */,
@@ -676,6 +687,7 @@
 				78F6C592298E9411008653A7 /* WorldOfPaybackApp.swift in Sources */,
 				78F6C609298ECB77008653A7 /* TransactionsListView.swift in Sources */,
 				78F6C5BA298EAB0D008653A7 /* RequestManager.swift in Sources */,
+				78DF704F298F93290053AB59 /* NetworkMonitor.swift in Sources */,
 				78F6C5B4298EAAC4008653A7 /* TransactionsRequest.swift in Sources */,
 				78F6C601298ECAAA008653A7 /* TransactionMock.swift in Sources */,
 				78F6C5D1298EAD0C008653A7 /* AccessTokenManager.swift in Sources */,

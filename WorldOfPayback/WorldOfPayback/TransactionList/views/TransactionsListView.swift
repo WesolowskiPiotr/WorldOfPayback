@@ -9,24 +9,31 @@ import SwiftUI
 
 struct TransactionsListView: View {
     @ObservedObject var viewModel: TransactionsListViewModel
-    @State var settingsIsPresented = false
+    @ObservedObject var monitor = NetworkMonitor()
+    
+    @State private var settingsIsPresented = false
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.transactions, id: \.id) { transaction in
-                    Text(transaction.transaction.partnerDisplayName)
+            if monitor.isConnected {
+                List {
+                    ForEach(viewModel.transactions, id: \.id) { transaction in
+                        Text(transaction.transaction.partnerDisplayName)
+                    }
                 }
-            }
-            .task {
-                await viewModel.fetchTransactions()
-            }
-            .listStyle(.plain)
-            .navigationTitle("Transactions")
-            .overlay {
-                if viewModel.isLoading {
-                    ProgressView("Fetching transactions...")
+                .task {
+                    await viewModel.fetchTransactions()
                 }
+                .listStyle(.plain)
+                .navigationTitle("Transaction-List-Title")
+                .overlay {
+                    if viewModel.isLoading {
+                        ProgressView("Fetching-Transactions-Text")
+                    }
+                }
+            } else {
+                InternetConnectionView()
+                .navigationTitle("Transaction-List-Title")
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
