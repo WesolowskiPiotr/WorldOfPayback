@@ -9,6 +9,7 @@
 // Transaction List View
 "Transaction-List-Title" = "Transactions";
 "Fetching-Transactions-Text" = "Fetching transactions...";
+"Transactions-Sum" = "Transactions sum:";
 
 // Internet Connection View
 "Not-Connected-Text" = "Not connected!";

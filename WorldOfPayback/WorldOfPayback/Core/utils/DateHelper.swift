@@ -13,6 +13,13 @@ final class DateHelper {
         case userFriendly = "MMM d yyyy HH:mm:ss"
     }
     
+    static func stringToDate(date: String) -> Date? {
+        let dfmatter = DateFormatter()
+        dfmatter.dateFormat = DateFormatType.userFriendly.rawValue
+        guard let formattedDate = dfmatter.date(from: date) else { return nil }
+        return formattedDate
+    }
+    
     static func dateStringWithFormat(date: String, formatType: DateFormatType) -> String {
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = DateFormatType.apiFormat.rawValue

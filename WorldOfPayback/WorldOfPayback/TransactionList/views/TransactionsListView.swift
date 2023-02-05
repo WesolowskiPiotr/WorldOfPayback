@@ -17,6 +17,13 @@ struct TransactionsListView: View {
         NavigationView {
             if monitor.isConnected {
                 List {
+                    HStack{
+                        Text("Transactions-Sum")
+                        Text("\(viewModel.sumOfTransactions)")
+                    }
+                    .bold()
+                    .font(.title2)
+                    .lineLimit(1)
                     ForEach(viewModel.transactions, id: \.id) { item in
                         let transaction = item.transaction
                         TransactionsRawView(transaction: transaction)
@@ -34,7 +41,7 @@ struct TransactionsListView: View {
                 }
             } else {
                 InternetConnectionView()
-                .navigationTitle("Transaction-List-Title")
+                    .navigationTitle("Transaction-List-Title")
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
