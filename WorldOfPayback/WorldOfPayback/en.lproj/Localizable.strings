@@ -11,6 +11,12 @@
 "Fetching-Transactions-Text" = "Fetching transactions...";
 "Transactions-Sum" = "Transactions sum:";
 
+// Search Filter View
+"Search-Filter-View-Title" = "Filters";
+"Category-Section-Title" = "Category";
+"Category-Section-Footer" = "Select filter you want to apply to transactions list.";
+"Search-Filter-View-Clear-Button" = "Clear";
+
 // Internet Connection View
 "Not-Connected-Text" = "Not connected!";
 "Perform-Network-Request" = "Perform Network Request";

@@ -18,9 +18,14 @@ protocol TransactionsFetcher {
 @MainActor
 final class TransactionsListViewModel: ObservableObject {
     @Published var isLoading: Bool
-    @Published var transactions: [IdentifiableTransaction] = []
+    @Published var filteredTransactions: [IdentifiableTransaction] = []
     @Published var sumOfTransactions = 0
+    @Published var transactionsCategories: [Int] = []
+    
     private let transactionsFetcher: TransactionsFetcher
+    
+    var categorySelection = Category.all.rawValue
+    var fetchedTransactions: [IdentifiableTransaction] = []
     
     init(
         isLoading: Bool = true,
@@ -31,24 +36,51 @@ final class TransactionsListViewModel: ObservableObject {
     }
     
     func fetchTransactions() async {
-        transactions.removeAll()
+        fetchedTransactions.removeAll()
         isLoading = true
-        transactions = await transactionsFetcher.fetchTransactions().enumerated().map { (index, transaction) in
+        fetchedTransactions = await transactionsFetcher.fetchTransactions().enumerated().map { (index, transaction) in
             return IdentifiableTransaction(id: index, transaction: transaction)
-        } .sorted {
+        }
+        .sorted {
             guard let firstDate = DateHelper.stringToDate(
                 date: $0.transaction.transactionDetail.bookingDate),
                   let secondDate = DateHelper.stringToDate(
                     date: $1.transaction.transactionDetail.bookingDate) else { return false }
             return firstDate > secondDate
         }
-        sumValuesOfTransactionsWith(category: .all)
+        
+        filteredTransactions = fetchedTransactions
+        
+        sumValuesOfTransactionsWith(category: Category.all.rawValue)
+        fetchCategories()
         isLoading = false
     }
     
-    private func sumValuesOfTransactionsWith(category: Category) {
-        sumOfTransactions = transactions.map({
+    func filterTransactionsWith(category: Int = Category.all.rawValue) {
+        filteredTransactions.removeAll()
+        isLoading = true
+        if category == Category.all.rawValue {
+            filteredTransactions = fetchedTransactions
+        } else {
+            filteredTransactions = fetchedTransactions.filter { $0.transaction.category == category }
+        }
+        
+        sumValuesOfTransactionsWith(category: category)
+        isLoading = false
+        categorySelection = category
+    }
+    
+    private func sumValuesOfTransactionsWith(category: Category.RawValue) {
+        sumOfTransactions = filteredTransactions.map({
             $0.transaction.transactionDetail.value.amount}).reduce(0, +)
+    }
+    
+    private func fetchCategories() {
+        var categories = fetchedTransactions.map {
+            $0.transaction.category
+        }
+        categories.append(Category.all  .rawValue)
+        transactionsCategories = categories.removingDuplicates().sorted()
     }
     
 }

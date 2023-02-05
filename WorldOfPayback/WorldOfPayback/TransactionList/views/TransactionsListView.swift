@@ -10,8 +10,7 @@ import SwiftUI
 struct TransactionsListView: View {
     @ObservedObject var viewModel: TransactionsListViewModel
     @ObservedObject var monitor = NetworkMonitor()
-    
-    @State private var settingsIsPresented = false
+    @State private var filterPickerIsPresented = false
     
     var body: some View {
         NavigationView {
@@ -25,7 +24,7 @@ struct TransactionsListView: View {
                         Text("\(viewModel.sumOfTransactions)")
                             .modifier(TransactionSum(color: .orange))
                     }
-                    ForEach(viewModel.transactions, id: \.id) { item in
+                    ForEach(viewModel.filteredTransactions, id: \.id) { item in
                         let transaction = item.transaction
                         NavigationLink(destination: TransactionDetailsView(transaction: transaction)) {
                             TransactionsRawView(transaction: transaction)
@@ -33,12 +32,33 @@ struct TransactionsListView: View {
                     }
                 }
                 .task {
-                    if viewModel.transactions.isEmpty {
+                    if viewModel.fetchedTransactions.isEmpty {
                         await viewModel.fetchTransactions()
+                    } else if viewModel.categorySelection != Category.all.rawValue {
+                        viewModel.filterTransactionsWith(category: viewModel.categorySelection)
+                    } else {
+                        viewModel.filterTransactionsWith()
                     }
                 }
                 .listRowSeparator(.hidden)
                 .navigationTitle("Transaction-List-Title")
+                .toolbar {
+                  ToolbarItem {
+                    Button {
+                      filterPickerIsPresented.toggle()
+                    } label: {
+                      Label("Filter", systemImage: "slider.horizontal.3")
+                    }
+                    .sheet(isPresented: $filterPickerIsPresented) {
+                      NavigationView {
+                          FilterView(
+                            selectedCategory: viewModel.categorySelection,
+                            categories: viewModel.transactionsCategories,
+                            performSelection: viewModel.filterTransactionsWith(category:))
+                      }
+                    }
+                  }
+                }
                 .overlay {
                     if viewModel.isLoading {
                         ProgressView("Fetching-Transactions-Text")
@@ -50,10 +70,6 @@ struct TransactionsListView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-    }
-    
-    func presentSettings() {
-        settingsIsPresented.toggle()
     }
 }
 

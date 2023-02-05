@@ -11,6 +11,12 @@
 "Fetching-Transactions-Text" = "Transaktionen werden abgerufen...";
 "Transactions-Sum" = "Transaktionssumme:";
 
+// Search Filter View
+"Search-Filter-View-Title" = "Filter";
+"Category-Section-Title" = "Kategorie";
+"Category-Section-Footer" = "Wählen Sie den Filter aus, den Sie auf die Transaktionsliste anwenden möchten.";
+"Search-Filter-View-Clear-Button" = "Klären";
+
 // Internet Connection View
 "Not-Connected-Text" = "Nicht verbunden!";
 "Perform-Network-Request" = "Führen Sie eine Netzwerkanforderung durch";
