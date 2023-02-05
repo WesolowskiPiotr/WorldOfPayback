@@ -11,24 +11,28 @@ struct TransactionsRawView: View {
     let transaction: Transaction
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
+        VStack {
+            HStack {
                 Text(transaction.partnerDisplayName)
                     .bold()
                     .font(.title2)
-                    .lineLimit(1)
+                    .lineLimit(2)
+                    .frame(alignment: .leading)
+                    .fixedSize(horizontal: false, vertical: true)
                 Spacer()
+                Text(transaction.transactionDetail.bookingDate)
+                    .font(.headline)
+                    .foregroundColor(.green)
+                    .lineLimit(1)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+                    .fixedSize(horizontal: true, vertical: false)
+            }
+            Spacer()
+            HStack {
                 Text(transaction.transactionDetail.description ?? .empty)
                     .modifier((transaction.transactionDetail.description != nil) ?
                               DescriptionCard(color: .cyan) :
                                 DescriptionCard(color: .white.opacity(StyleConstants.translucentBackgroundOpacity.rawValue)))
-            }
-            Spacer()
-            VStack(alignment: .trailing) {
-                Text(transaction.transactionDetail.bookingDate)
-                    .font(.title3)
-                    .foregroundColor(.green)
-                    .lineLimit(1)
                 Spacer()
                 HStack {
                     Text(String(transaction.transactionDetail.value.amount))
@@ -41,11 +45,8 @@ struct TransactionsRawView: View {
                         .lineLimit(1)
                 }
             }
-            .frame(width: 185)
         }
         .modifier(RowCard())
-        .background(.gray.opacity(StyleConstants.transactionRowBackgroundOpacity.rawValue))
-        .cornerRadius(StyleConstants.cornerRadius.rawValue)
     }
 }
 

@@ -19,20 +19,25 @@ struct TransactionsListView: View {
                 List {
                     HStack{
                         Text("Transactions-Sum")
+                            .bold()
+                            .font(.title2)
+                            .lineLimit(1)
                         Text("\(viewModel.sumOfTransactions)")
+                            .modifier(TransactionSum(color: .orange))
                     }
-                    .bold()
-                    .font(.title2)
-                    .lineLimit(1)
                     ForEach(viewModel.transactions, id: \.id) { item in
                         let transaction = item.transaction
-                        TransactionsRawView(transaction: transaction)
+                        NavigationLink(destination: TransactionDetailsView(transaction: transaction)) {
+                            TransactionsRawView(transaction: transaction)
+                        }
                     }
                 }
                 .task {
-                    await viewModel.fetchTransactions()
+                    if viewModel.transactions.isEmpty {
+                        await viewModel.fetchTransactions()
+                    }
                 }
-                .listStyle(.plain)
+                .listRowSeparator(.hidden)
                 .navigationTitle("Transaction-List-Title")
                 .overlay {
                     if viewModel.isLoading {

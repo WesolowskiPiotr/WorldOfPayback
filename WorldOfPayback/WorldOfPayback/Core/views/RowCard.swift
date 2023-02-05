@@ -14,9 +14,5 @@ struct RowCard: ViewModifier {
             .frame(height: 70)
             .listRowSeparator(.hidden)
             .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(.gray.opacity(0.5), lineWidth: 1)
-            )
     }
 }
