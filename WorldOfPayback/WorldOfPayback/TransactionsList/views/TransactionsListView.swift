@@ -40,27 +40,30 @@ struct TransactionsListView: View {
                         viewModel.filterTransactionsWith()
                     }
                 }
+                .refreshable {
+                    await viewModel.fetchTransactions()
+                }
                 .listRowSeparator(.hidden)
                 .navigationTitle("Transaction-List-Title")
                 .toolbar {
-                  ToolbarItem {
-                    Button {
-                      filterPickerIsPresented.toggle()
-                    } label: {
-                      Label("Filter", systemImage: "slider.horizontal.3")
+                    ToolbarItem {
+                        Button {
+                            filterPickerIsPresented.toggle()
+                        } label: {
+                            Label("Filter", systemImage: "slider.horizontal.3")
+                        }
+                        .sheet(isPresented: $filterPickerIsPresented) {
+                            NavigationView {
+                                FilterView(
+                                    selectedCategory: viewModel.categorySelection,
+                                    categories: viewModel.transactionsCategories,
+                                    performSelection: viewModel.filterTransactionsWith(category:))
+                            }
+                        }
                     }
-                    .sheet(isPresented: $filterPickerIsPresented) {
-                      NavigationView {
-                          FilterView(
-                            selectedCategory: viewModel.categorySelection,
-                            categories: viewModel.transactionsCategories,
-                            performSelection: viewModel.filterTransactionsWith(category:))
-                      }
-                    }
-                  }
                 }
                 .overlay {
-                    if viewModel.isLoading {
+                    if viewModel.isLoading && viewModel.fetchedTransactions.isEmpty {
                         ProgressView("Fetching-Transactions-Text")
                     }
                 }

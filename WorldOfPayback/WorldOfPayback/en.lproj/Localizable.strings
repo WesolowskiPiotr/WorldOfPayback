@@ -28,3 +28,7 @@
 "Not-Connected-Alert-Title" = "No Internet Connection";
 "Not-Connected-Alert-Message" = "Please enable Wifi or Cellular data";
 "Not-Connected-Alert-Button-Text" = "Cancel";
+
+// Error View
+"Empty-Transactions-List-Message" = "Something, went wrong. Click Refresh button to try again.";
+"Fetch-Transactions-Again" = "Fetch transactions again.";

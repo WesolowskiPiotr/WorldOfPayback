@@ -29,3 +29,6 @@
 "Not-Connected-Alert-Message" = "Bitte aktivieren Sie WLAN oder Mobilfunkdaten";
 "Not-Connected-Alert-Button-Text" = "Stornieren";
 
+// Error View
+"Empty-Transactions-List-Message" = "Etwas ist schief gelaufen. Klicken Sie auf die Schaltfläche Aktualisieren, um es erneut zu versuchen.";
+"Fetch-Transactions-Again" = "Transaktionen erneut abrufen.";

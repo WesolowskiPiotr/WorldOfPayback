@@ -24,7 +24,6 @@ extension FetchTransactionService: TransactionsFetcher {
         requestManager.perform(requestData)
         return transactionsContainer.items
     } catch {
-      print(error.localizedDescription)
       return []
     }
   }

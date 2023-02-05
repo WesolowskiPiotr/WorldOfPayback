@@ -36,8 +36,8 @@ final class TransactionsListViewModel: ObservableObject {
     }
     
     func fetchTransactions() async {
-        fetchedTransactions.removeAll()
-        isLoading = true
+        clear()
+        
         fetchedTransactions = await transactionsFetcher.fetchTransactions().enumerated().map { (index, transaction) in
             return IdentifiableTransaction(id: index, transaction: transaction)
         }
@@ -53,12 +53,12 @@ final class TransactionsListViewModel: ObservableObject {
         
         sumValuesOfTransactionsWith(category: Category.all.rawValue)
         fetchCategories()
-        isLoading = false
     }
     
     func filterTransactionsWith(category: Int = Category.all.rawValue) {
         filteredTransactions.removeAll()
         isLoading = true
+        
         if category == Category.all.rawValue {
             filteredTransactions = fetchedTransactions
         } else {
@@ -79,8 +79,14 @@ final class TransactionsListViewModel: ObservableObject {
         var categories = fetchedTransactions.map {
             $0.transaction.category
         }
-        categories.append(Category.all  .rawValue)
+        categories.append(Category.all.rawValue)
         transactionsCategories = categories.removingDuplicates().sorted()
+        isLoading = false
     }
     
+    private func clear() {
+        isLoading = true
+        fetchedTransactions.removeAll()
+        categorySelection = Category.all.rawValue
+    }
 }
