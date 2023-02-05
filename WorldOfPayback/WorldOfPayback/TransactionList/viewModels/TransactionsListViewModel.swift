@@ -28,8 +28,8 @@ final class TransactionsListViewModel: ObservableObject {
     func fetchTransactions() async {
         transactions.removeAll()
         isLoading = true
-        transactions = await transactionsFetcher.fetchTransactions().map { transaction in
-            return IdentifiableTransaction(transaction: transaction)
+        transactions = await transactionsFetcher.fetchTransactions().enumerated().map { (index, transaction) in
+            return IdentifiableTransaction(id: index, transaction: transaction)
         }
         isLoading = false
     }

@@ -9,7 +9,13 @@ import Foundation
 
 struct TransactionsFetcherMock: TransactionsFetcher {
     func fetchTransactions() async -> [Transaction] {
-        Thread.sleep(forTimeInterval: 2)
-        return Transaction.mock
+        let seconds = Int.random(in: 1...2)
+        let duration = UInt64(seconds * 1_000_000_000)
+        do {
+            try await Task.sleep(nanoseconds: duration)
+            return Transaction.mock
+        } catch {
+            return []
+        }
     }
 }

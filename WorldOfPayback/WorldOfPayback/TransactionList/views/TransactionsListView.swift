@@ -17,8 +17,9 @@ struct TransactionsListView: View {
         NavigationView {
             if monitor.isConnected {
                 List {
-                    ForEach(viewModel.transactions, id: \.id) { transaction in
-                        Text(transaction.transaction.partnerDisplayName)
+                    ForEach(viewModel.transactions, id: \.id) { item in
+                        let transaction = item.transaction
+                        TransactionsRawView(transaction: transaction)
                     }
                 }
                 .task {

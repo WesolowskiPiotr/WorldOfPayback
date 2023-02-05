@@ -6,8 +6,24 @@
 //
 
 struct IdentifiableTransaction: Codable {
-    var id = Int.random(in: Int.min...Int.max)
+    var id: Int
     let transaction: Transaction
+    
+    init(id: Int, transaction: Transaction) {
+        self.id = id
+        self.transaction = Transaction(
+            partnerDisplayName: transaction.partnerDisplayName,
+            alias: transaction.alias,
+            category: transaction.category,
+            transactionDetail: TransactionDetail(
+                description: transaction.transactionDetail.description,
+                bookingDate: DateHelper.dateStringWithFormat(
+                    date: transaction.transactionDetail.bookingDate,
+                    formatType: .userFriendly),
+                value: transaction.transactionDetail.value
+            )
+        )
+    }
 }
 
 // MARK: - Identifiable
